@@ -139,7 +139,7 @@ function unityecard_schema() {
 /**
  * Implements hook_field_schema().
  */
-function unityecard_field_schema($field) {
+function ecard_field_schema($field) {
   $columns = array(
     'id' => array(
       'description' => 'CSS ID for the ecard div.',
