@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /**
  * @file
@@ -8,7 +8,7 @@
 /**
  * Implements hook_schema().
  */
-function ecard_schema() {
+function unity_ecard_schema() {
   $schema['ecard'] = array(
     'description' => 'The table for ecards.',
     'fields' => array(
@@ -139,7 +139,7 @@ function ecard_schema() {
 /**
  * Implements hook_field_schema().
  */
-function ecard_field_schema($field) {
+function unity_ecard_field_schema($field) {
   $columns = array(
     'id' => array(
       'description' => 'CSS ID for the ecard div.',
@@ -206,74 +206,3 @@ function ecard_field_schema($field) {
     'columns' => $columns,
   );
 }
-
-/**
- * Change the pickup field from a boolean flag to an int for a timestamp.
- */
-function ecard_update_7001() {
-  $spec = array(
-    'description' => 'Timestamp for the picked up event.',
-    'type' => 'int',
-    'not null' => TRUE,
-    'default' => 0,
-  );
-  db_change_field('ecard', 'pick_up', 'pick_up', $spec);
-}
-
-/**
- * Add in "sent" and "notify" boolean fields.
- */
-function ecard_update_7002() {
-  $spec = array(
-    'description' => 'Whether or not the card has been sent',
-    'type' => 'int',
-    'size' => 'tiny',
-    'default' => 0,
-  );
-  db_add_field('ecard', 'sent', $spec);
-
-  $spec = array(
-    'description' => 'Whether or not the sender should be notified when the card is picked up',
-    'type' => 'int',
-    'size' => 'tiny',
-    'default' => 0,
-  );
-  db_add_field('ecard', 'notify', $spec);
-}
-
-/**
- * Rename 'timestamp' to 'created', and add in 'sent_time' and 'scheduled_time'
- * fields.
- */
-function ecard_update_7003() {
-  $spec = array(
-    'description' => 'The timestamp the ecard was created.',
-    'type' => 'int',
-    'not null' => TRUE,
-    'default' => 0,
-  );
-  db_change_field('ecard', 'timestamp', 'created', $spec);
-  $spec = array(
-    'description' => 'The timestamp the ecard was sent.',
-    'type' => 'int',
-    'not null' => TRUE,
-    'default' => 0,
-  );
-  db_add_field('ecard', 'sent_time', $spec);
-  $spec = array(
-    'description' => 'The timestamp the ecard is/was scheduled to be sent at.',
-    'type' => 'int',
-    'not null' => TRUE,
-    'default' => 0,
-  );
-  db_add_field('ecard', 'scheduled_time', $spec);
-  $spec = array(
-    'description' => 'The field name of the ecard field.',
-    'type' => 'varchar',
-    'length' => 128,
-    'not null' => TRUE,
-    'default' => '',
-  );
-  db_add_field('ecard', 'field_name', $spec);
-}
-

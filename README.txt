@@ -1,5 +1,5 @@
 ******
-E-Card
+unityEcard is a variation of
 ******
 This module is for sending E-Cards to another person. For this you will get a
 field that creates a form. If the form is completed an e-mail will be send to

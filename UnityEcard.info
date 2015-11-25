@@ -1,9 +1,12 @@
 name = Unity Ecard
 description = "Send an eCard in honor or in memory at donation time"
+package = Unity Modules
+version = 7.x-1.0
 core = 7.x
 dependencies[] = entity
 
-files[] = tests/unityEcard.test
+files[] = tests/UnityEcard.test
 
 ; from ecard GMT: Mon, 30 Sep 2013 21:20:52 GMT
+
 

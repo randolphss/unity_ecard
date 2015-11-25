@@ -133,28 +133,6 @@ function ecard_field_instance_settings_form($field, $instance) {
     '#collapsible' => TRUE
   );
 
-
-  /**
-   * @todo Add cron support. Maybe with rules.
-  $form['ecard_settings']['ecard_cron'] = array(
-  '#type' => 'textfield',
-  '#title' => t('Days to keep E-Cards'),
-  '#size' => '3',
-  '#default_value' => isset($instance['settings']['ecard_settings']['ecard_cron']) ? $instance['settings']['ecard_settings']['ecard_cron'] : 0,
-  '#description' => t('Ecards older than the value entered here will automatically be deleted when cron runs. To prevent ecard deletion, set this value to 0.'),
-  );
-   */
-  /**
-   * @todo Make this work when the "send multiple e-mails" option is ready.
-  $form['ecard_settings']['ecard_max_count'] = array(
-  '#type' => 'textfield',
-  '#title' => 'Maximum number of e-mails allowed to send at a time',
-  '#size' => '3',
-  '#default_value' => isset($instance['settings']['ecard_settings']['ecard_max_count']) ? $instance['settings']['ecard_settings']['ecard_max_count'] : 10,
-  '#description' => 'The default value is 10. It is recommended to use a low number so mails sent from your server are not treated as spam. If "time out" errors or "white screens" occur then reduce the number.',
-  );
-   *
-   */
   // @todo: use tokens!
   $form['ecard_settings']['ecard_redirect'] = array(
     '#type' => 'textfield',

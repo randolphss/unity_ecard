@@ -4,11 +4,11 @@
  * @file
  * Main module file for the ecard module.
  */
-module_load_include('inc', 'ecard', '/includes/ecard.entity');
-module_load_include('inc', 'ecard', '/includes/ecard.field');
-module_load_include('inc', 'ecard', '/includes/ecard.mail');
-module_load_include('inc', 'ecard', '/includes/ecard.token');
-module_load_include('inc', 'ecard', '/includes/ecard.theme');
+module_load_include('inc', 'ecard', '/includes/UnityEcard.entity');
+module_load_include('inc', 'ecard', '/includes/UnityEcard.field');
+module_load_include('inc', 'ecard', '/includes/UnityEcard.mail');
+module_load_include('inc', 'ecard', '/includes/UnityEcard.token');
+module_load_include('inc', 'ecard', '/includes/UnityEcard.theme');
 
 // Defining constants for binary operations.
 define('ECARD_NO_HASH_SET', 1);
