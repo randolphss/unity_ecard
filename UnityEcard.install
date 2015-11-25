@@ -2,15 +2,15 @@
 
 /**
  * @file
- * Install file for the ecard module.
+ * Install file for the unity ecard module.
  */
 
 /**
  * Implements hook_schema().
  */
-function unity_ecard_schema() {
-  $schema['ecard'] = array(
-    'description' => 'The table for ecards.',
+function unityecard_schema() {
+  $schema['unityecard'] = array(
+    'description' => 'The table for Unity ecards.',
     'fields' => array(
       'hash' => array(
         'description' => 'The hash-value unique identifier.',
@@ -139,7 +139,7 @@ function unity_ecard_schema() {
 /**
  * Implements hook_field_schema().
  */
-function unity_ecard_field_schema($field) {
+function unityecard_field_schema($field) {
   $columns = array(
     'id' => array(
       'description' => 'CSS ID for the ecard div.',
